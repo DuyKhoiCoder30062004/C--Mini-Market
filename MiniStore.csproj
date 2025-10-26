@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Commom\preview\" />
     <Folder Include="Modules\OrderManager\Controllers\" />
     <Folder Include="Modules\OrderManager\Repository\" />
     <Folder Include="Modules\OrderManager\Services\" />
