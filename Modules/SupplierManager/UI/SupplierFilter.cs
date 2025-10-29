@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using MiniStore.Modules.OrderManager.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,16 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiniStore.Modules.OrderManager.UI
+namespace MiniStore.Modules.SupplierManager.UI
 {
-    public partial class OrderFilter : UserControl
+    public partial class SupplierFilter : UserControl
     {
-        public OrderFilter()
+        public SupplierFilter()
         {
             InitializeComponent();
-
+               
         }
-        private void setupLayout()
+        private void SetupLayout()
         {
             OrderStyle.ApplyStyleLabelWithIcon(LabelFilter, IconChar.Filter, "Bộ lọc");
             OrderStyle.ApplyStyleDatePicker(dateTimePicker1);
@@ -31,51 +32,9 @@ namespace MiniStore.Modules.OrderManager.UI
             OrderStyle.ApplyStyleButtonWithICon(ButtonRefresh, "Làm mới", IconChar.Refresh, Color.FromArgb(79, 64, 187));
             OrderStyle.ApplyStyleCompoBox(comboBox1);
         }
-        private void OrderFilter_Load(object sender, EventArgs e)
+        private void SupplierFilter_Load(object sender, EventArgs e)
         {
-            setupLayout();
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void LabelFilter_Click(object sender, EventArgs e) { }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButtonRefresh_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void ButtonFilter_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void LableDatePick_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            SetupLayout();
         }
     }
 }

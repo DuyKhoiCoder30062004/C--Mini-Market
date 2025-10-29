@@ -39,7 +39,7 @@
             orderFilter.Padding = new Padding(0);
 
             var orderTable = CreateOrderTable();
-            Style.ApplyStyleTable(orderTable);
+            OrderStyle.ApplyStyleTable(orderTable);
             orderTable.Dock = DockStyle.Fill;
             orderTable.BorderStyle = BorderStyle.None;
             orderTable.Margin = new Padding(8,0,0,10);
@@ -126,7 +126,15 @@
                 if (e.RowIndex >= 0 && dataGridView.Columns[e.ColumnIndex].Name == "Action")
                 {
                     var id = dataGridView.Rows[e.RowIndex].Cells["Id"].Value?.ToString();
-                    MessageBox.Show($"Xem chi tiết đơn hàng: {id}");
+                    var popup = new PopupOrderDetail();
+                    var button = new Button();
+                    popup.Controls.Add(button);
+                    button.Click += (obj, e) =>
+                    {
+                        popup.Close();
+                    };
+                    popup.ShowDialog();
+                   
                 }
                 if (e.RowIndex >= 0 && dataGridView.Columns[e.ColumnIndex].Name == "Selected")
                 {
@@ -164,18 +172,18 @@
       
             dataGridView.Columns.Add(dateCol);
             AddHeaderCheckbox(dataGridView);
-            dataGridView.Columns["Selected"].DisplayIndex = 9;
-            dataGridView.Columns["Id"].DisplayIndex = 8;
-            dataGridView.Columns["Employee"].DisplayIndex = 1;
-            dataGridView.Columns["Customer"].DisplayIndex = 6;
-            dataGridView.Columns["Product"].DisplayIndex = 5;
-            dataGridView.Columns["FinalAmount"].DisplayIndex = 4;
-            dataGridView.Columns["Status"].DisplayIndex = 3;
-            dataGridView.Columns["PaymentMethod"].DisplayIndex = 2;
-            dataGridView.Columns["Date"].DisplayIndex = 1;
-            dataGridView.Columns["Action"].DisplayIndex = 0;
+            dataGridView.Columns["Selected"].DisplayIndex = 0;
+            dataGridView.Columns["Id"].DisplayIndex = 1;
+            dataGridView.Columns["Employee"].DisplayIndex = 2;
+            dataGridView.Columns["Customer"].DisplayIndex = 3;
+            dataGridView.Columns["Product"].DisplayIndex = 4;
+            dataGridView.Columns["FinalAmount"].DisplayIndex = 5;
+            dataGridView.Columns["Status"].DisplayIndex = 6;
+            dataGridView.Columns["PaymentMethod"].DisplayIndex = 7;
+            dataGridView.Columns["Date"].DisplayIndex = 8;
+            dataGridView.Columns["Action"].DisplayIndex = 9;
             dataGridView.Columns["FinalAmount"].SortMode = DataGridViewColumnSortMode.Programmatic;
-            
+
 
             SetFixedColumns(dataGridView);
             dataGridView.Columns["FinalAmount"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

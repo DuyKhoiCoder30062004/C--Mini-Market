@@ -21,11 +21,11 @@ namespace MiniStore.Modules.OrderManager.UI
 
         private void SetupLayout()
         {
-            Style.ApplyStyleButtonWithICon(ButtonAdd,"Thêm mới", IconChar.PlusCircle, Style.PRIMARY_COLOR);
-            Style.ApplyStyleButtonWithICon(ButtonExport, "Báo cáo", IconChar.FileExport, Style.PRIMARY_COLOR);
-            Style.ApplyStyleButtonWithICon(ButtonSearch, "Tìm kiếm", IconChar.MagnifyingGlass,Style.PRIMARY_COLOR);
-            Style.ApplyStyleInput(SearchInput, "Nhập mã hoặc tên khách hàng...");
-            Style.ApplyStyleButtonWithICon(ButtonDelete, "Xóa", IconChar.Trash,Style.PRIMARY_COLOR);
+            OrderStyle.ApplyStyleButtonWithICon(ButtonAdd,"Thêm mới", IconChar.PlusCircle, OrderStyle.PRIMARY_COLOR);
+            OrderStyle.ApplyStyleButtonWithICon(ButtonExport, "Báo cáo", IconChar.FileExport, OrderStyle.PRIMARY_COLOR);
+            OrderStyle.ApplyStyleButtonWithICon(ButtonSearch, "Tìm kiếm", IconChar.MagnifyingGlass,OrderStyle.PRIMARY_COLOR);
+            OrderStyle.ApplyStyleInput(SearchInput, "Nhập mã hoặc tên khách hàng...");
+            OrderStyle.ApplyStyleButtonWithICon(ButtonDelete, "Xóa", IconChar.Trash,OrderStyle.PRIMARY_COLOR);
         }
 
         public void HandleButtonDelete(List<string> ids) {

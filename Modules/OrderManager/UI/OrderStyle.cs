@@ -1,6 +1,7 @@
 ﻿using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -10,8 +11,10 @@ using Font = System.Drawing.Font;
 
 namespace MiniStore.Modules.OrderManager.UI
 {
-    public static class Style
+    public static class OrderStyle
     {
+        private static readonly Color ActiveBorderColor = Color.DeepSkyBlue;
+        private const int BorderRadius = 15;
         public static readonly Color PRIMARY_COLOR = Color.FromArgb(79, 64, 187);
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -353,6 +356,77 @@ namespace MiniStore.Modules.OrderManager.UI
 
           
             table.ScrollBars = ScrollBars.Vertical;
+        }
+
+        public static void ApplyModalStyle(Form form)
+        {
+           
+            form.FormBorderStyle = FormBorderStyle.None;
+
+            form.BackColor = Color.White;
+            form.Padding = new Padding(1);
+
+    
+            RoundCorners(form, BorderRadius);
+
+       
+            form.Paint += (sender, e) =>
+            {
+                Control control = (Control)sender;
+
+              
+                using (Pen borderPen = new Pen(Color.LightGray, 1))
+                {
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+        
+                    using (GraphicsPath path = GetRoundedRectanglePath(control.ClientRectangle, BorderRadius))
+                    {
+                        e.Graphics.DrawPath(borderPen, path);
+                    }
+                }
+            };
+        }
+
+   
+
+        private static void RoundCorners(Form form, int radius)
+        {
+           
+            form.Region = new Region(GetRoundedRectanglePath(form.ClientRectangle, radius));
+
+         
+            form.Resize += (sender, e) =>
+            {
+                if (form.WindowState == FormWindowState.Normal)
+                {
+                    form.Region = new Region(GetRoundedRectanglePath(form.ClientRectangle, radius));
+                }
+            };
+        }
+
+        private static GraphicsPath GetRoundedRectanglePath(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = radius * 2;
+            Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
+
+         
+            path.AddArc(arcRect, 180, 90);
+
+
+            arcRect.X = rect.Right - diameter;
+            path.AddArc(arcRect, 270, 90);
+
+            arcRect.Y = rect.Bottom - diameter;
+            path.AddArc(arcRect, 0, 90);
+
+   
+            arcRect.X = rect.Left;
+            path.AddArc(arcRect, 90, 90);
+
+            path.CloseFigure();
+            return path;
         }
     }
 }

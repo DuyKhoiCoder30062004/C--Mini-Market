@@ -28,33 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            splitContainer1 = new SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // splitContainer1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(708, 280);
-            label1.Name = "label1";
-            label1.Size = new Size(502, 60);
-            label1.TabIndex = 0;
-            label1.Text = "Suppppppppppppfsdkjlf";
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
+            splitContainer1.Size = new Size(1210, 900);
+            splitContainer1.SplitterDistance = 403;
+            splitContainer1.TabIndex = 0;
             // 
             // MainSupplierUI
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            Controls.Add(label1);
+            BackColor = Color.White;
+            Controls.Add(splitContainer1);
             Name = "MainSupplierUI";
             Size = new Size(1210, 900);
+            Load += MainSupplierUI_Load;
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private SplitContainer splitContainer1;
     }
 }

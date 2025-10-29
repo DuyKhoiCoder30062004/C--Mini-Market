@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniStore.Modules.OrderManager.Dtos
 {
-    public class Order
+    public class OrderDto
     {
         public string Id { get; set; }
         public string EmployeeId { get; set; }

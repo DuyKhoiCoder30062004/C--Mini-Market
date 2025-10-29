@@ -50,7 +50,7 @@
             // SearchInput
             // 
             SearchInput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SearchInput.Location = new Point(3, 48);
+            SearchInput.Location = new Point(10, 48);
             SearchInput.Name = "SearchInput";
             SearchInput.Size = new Size(400, 34);
             SearchInput.TabIndex = 1;

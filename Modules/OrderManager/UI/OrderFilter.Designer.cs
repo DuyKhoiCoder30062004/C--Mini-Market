@@ -81,7 +81,7 @@
             // LableDatePick
             // 
             LableDatePick.AutoSize = true;
-            LableDatePick.Location = new Point(253, 17);
+            LableDatePick.Location = new Point(255, 17);
             LableDatePick.Name = "LableDatePick";
             LableDatePick.Size = new Size(50, 20);
             LableDatePick.TabIndex = 4;

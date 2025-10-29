@@ -48,7 +48,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.White;
-            splitContainer1.Panel2.RightToLeft = RightToLeft.Yes;
+            splitContainer1.Panel2.RightToLeft = RightToLeft.No;
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(1210, 900);
             splitContainer1.SplitterDistance = 129;
