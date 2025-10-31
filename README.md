@@ -15,3 +15,6 @@ I use docker to build everything. Because I don't want to break anything. So the
 # Then inside the container
 [container]$ sqlite3 database.sqlite3 < script.sql # sqlite must be installed
 ```
+#Drawio Class Diagram
+https://drive.google.com/file/d/1_vRQ3hf37h94D0RT1SALaH8awx77AmaY/view?usp=sharing
+
