@@ -1,15 +1,16 @@
 ﻿
 using MiniStore.Modules.OrderManager.Dtos;
-using MiniStore.Modules.OrderManager.Repository;
 
 
-namespace MiniStore.Modules.OrderManager.Services
+
+namespace MiniStore.Modules.OrderManager.DAL
+
 {
-    internal class OrderService
+    internal class OrderDAL
     {
-        private readonly OrderRepository repository;
-        public OrderService() { 
-           this.repository = new OrderRepository();
+       
+        public OrderDAL() { 
+       
         }
         public void LoadOrderData()
         {

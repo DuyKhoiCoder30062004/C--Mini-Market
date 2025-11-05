@@ -1,17 +1,17 @@
-﻿namespace MiniStore.Modules.OrderManager.Controllers
+﻿namespace MiniStore.Modules.OrderManager.BLL
+
 {
     using MiniStore.Modules.OrderManager.Dtos;
-    using MiniStore.Modules.OrderManager.Services;
     using System;
     using System.Collections.Generic;
 
-        internal class OrderController
+        internal class OrderBLL
     {
-                private readonly OrderService orderService;
+              
 
-                public OrderController()
+                public OrderBLL()
         {
-            orderService = new OrderService();
+        
         }
 
                 public void LoadOrderData()
