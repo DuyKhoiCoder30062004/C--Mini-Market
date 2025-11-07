@@ -1,7 +1,7 @@
 # C# Mini Market Database Design
 We use sqlite because it is lightweight and simple to deploy. small desktop software shouldn't have a whole database server ecosystem.
 
-## ERD
+## ERD (Xài SQL Server khi DEMO chính yếu cho thầy, nghĩa là team lead DEMO, gộp code hết tất tật rồi connect với SQL Server)
 ![ERD](./ERD.png)
 
 ## SQL demo screenshot
