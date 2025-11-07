@@ -21,12 +21,18 @@ namespace MiniStore.Modules.SupplierManager.UI
 
         private void SetupLayout()
         {
-             OrderStyle.ApplyStyleButtonWithICon(ButtonAdd, "Thêm mới", IconChar.PlusCircle, OrderStyle.PRIMARY_COLOR);
-            OrderStyle.ApplyStyleButtonWithICon(ButtonReport, "Báo cáo", IconChar.FileExport, OrderStyle.PRIMARY_COLOR);
-            OrderStyle.ApplyStyleButtonWithICon(ButtonSearch, "Tìm kiếm", IconChar.MagnifyingGlass, OrderStyle.PRIMARY_COLOR);
-            OrderStyle.ApplyStyleInput(InputSearch, "Nhập mã hoặc tên khách hàng...");
-            OrderStyle.ApplyStyleButtonWithICon(ButtonDelete, "Xóa", IconChar.Trash, OrderStyle.PRIMARY_COLOR);
+            OrderManager.UI.OrderStyle.ApplyStyleButtonWithICon(ButtonAdd, "Thêm mới", IconChar.PlusCircle, OrderManager.UI.OrderStyle.PRIMARY_COLOR);
+            OrderManager.UI.OrderStyle.ApplyStyleButtonWithICon(ButtonReport, "Báo cáo", IconChar.FileExport, OrderManager.UI.OrderStyle.PRIMARY_COLOR);
+            OrderManager.UI.OrderStyle.ApplyStyleButtonWithICon(ButtonSearch, "Tìm kiếm", IconChar.MagnifyingGlass, OrderManager.UI.OrderStyle.PRIMARY_COLOR);
+            OrderManager.UI.OrderStyle.ApplyStyleInput(InputSearch, "Nhập mã hoặc tên khách hàng...");
+            OrderManager.UI.OrderStyle.ApplyStyleButtonWithICon(ButtonDelete, "Xóa", IconChar.Trash, OrderManager.UI.OrderStyle.PRIMARY_COLOR);
+          
         }
+
+        public  Button GetButtonCreate() => ButtonAdd;
+        public Button GetButtonDelete() => ButtonDelete;
+        public TextBox GetInputSearch() => InputSearch;
+        public Button GetButtonSearch() => ButtonSearch;
         private void SupplierHeader_Load(object sender, EventArgs e)
         {
           SetupLayout();  

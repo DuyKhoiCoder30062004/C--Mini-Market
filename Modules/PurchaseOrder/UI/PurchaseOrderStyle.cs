@@ -6,16 +6,15 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-using Font = System.Drawing.Font;
 
-namespace MiniStore.Modules.OrderManager.UI
+namespace MiniStore.Modules.PurchaseOrder.UI
 {
-    public static class OrderStyle
+    public static class PurchaseOrderStyle
     {
         private static readonly Color ActiveBorderColor = Color.DeepSkyBlue;
         private const int BorderRadius = 15;
         public static readonly Color PRIMARY_COLOR = Color.FromArgb(79, 64, 187);
+        public static readonly Color DANGER_COLOR = Color.FromArgb(220, 53, 69);
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
        int nLeftRect, int nTopRect, int nRightRect, int nBottomRect,
@@ -224,11 +223,29 @@ namespace MiniStore.Modules.OrderManager.UI
             comboBox.FlatStyle = FlatStyle.Flat;
             comboBox.BackColor = Color.White;
             comboBox.ForeColor = Color.Black;
-            comboBox.Font = new Font("Segoe UI", 12);
+            comboBox.Font = new Font("Segoe UI", 10F);
             comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
             comboBox.Margin = new Padding(0);
             comboBox.Padding = new Padding(4);
+
+
+            comboBox.Region = System.Drawing.Region.FromHrgn(
+                CreateRoundRectRgn(0, 0, comboBox.Width, comboBox.Height, 6, 6)
+            );
+
+
+            comboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            comboBox.DrawItem += (s, e) =>
+            {
+                e.DrawBackground();
+                if (e.Index >= 0)
+                {
+                    string text = comboBox.Items[e.Index].ToString();
+                    e.Graphics.DrawString(text, comboBox.Font, Brushes.Black, e.Bounds);
+                }
+                e.DrawFocusRectangle();
+            };
         }
 
         public static void ApplyStyleRadioButton(RadioButton radio, string title)
@@ -322,46 +339,46 @@ namespace MiniStore.Modules.OrderManager.UI
             table.ColumnHeadersHeight = 60;
             table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
-     
+
             table.DefaultCellStyle.BackColor = Color.White;
-            table.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 245, 255); 
-            table.DefaultCellStyle.ForeColor =Color.FromArgb(50, 50, 50);
+            table.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 245, 255);
+            table.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
             table.DefaultCellStyle.SelectionBackColor = Color.FromArgb(228, 214, 255);
             table.DefaultCellStyle.SelectionForeColor = Color.Black;
             table.DefaultCellStyle.Padding = new Padding(5, 0, 5, 0);
             table.RowTemplate.Height = 40;
             table.AllowUserToResizeRows = false;
 
-        
+
             table.AdvancedColumnHeadersBorderStyle.All = DataGridViewAdvancedCellBorderStyle.None;
             table.AdvancedCellBorderStyle.All = DataGridViewAdvancedCellBorderStyle.None;
 
-          
+
             table.ScrollBars = ScrollBars.Vertical;
         }
 
         public static void ApplyModalStyle(Form form)
         {
-           
+
             form.FormBorderStyle = FormBorderStyle.None;
 
             form.BackColor = Color.White;
             form.Padding = new Padding(1);
 
-    
+
             RoundCorners(form, BorderRadius);
 
-       
+
             form.Paint += (sender, e) =>
             {
                 Control control = (Control)sender;
 
-              
+
                 using (Pen borderPen = new Pen(Color.LightGray, 1))
                 {
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
-        
+
                     using (GraphicsPath path = GetRoundedRectanglePath(control.ClientRectangle, BorderRadius))
                     {
                         e.Graphics.DrawPath(borderPen, path);
@@ -370,14 +387,14 @@ namespace MiniStore.Modules.OrderManager.UI
             };
         }
 
-   
+
 
         private static void RoundCorners(Form form, int radius)
         {
-           
+
             form.Region = new Region(GetRoundedRectanglePath(form.ClientRectangle, radius));
 
-         
+
             form.Resize += (sender, e) =>
             {
                 if (form.WindowState == FormWindowState.Normal)
@@ -393,7 +410,7 @@ namespace MiniStore.Modules.OrderManager.UI
             int diameter = radius * 2;
             Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
 
-         
+
             path.AddArc(arcRect, 180, 90);
 
 
@@ -403,7 +420,7 @@ namespace MiniStore.Modules.OrderManager.UI
             arcRect.Y = rect.Bottom - diameter;
             path.AddArc(arcRect, 0, 90);
 
-   
+
             arcRect.X = rect.Left;
             path.AddArc(arcRect, 90, 90);
 

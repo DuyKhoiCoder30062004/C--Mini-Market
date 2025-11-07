@@ -1,6 +1,6 @@
-﻿namespace MiniStore.Modules.SupplierManager.UI
+﻿namespace MiniStore.Modules.PurchaseOrder.UI
 {
-    partial class SupplierFilter
+    partial class PurchaseOrderFilter
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ComboboxStatus = new ComboBox();
+            comboBox1 = new ComboBox();
             ButtonRefresh = new FontAwesome.Sharp.IconButton();
             ButtonFilter = new FontAwesome.Sharp.IconButton();
+            groupBox1 = new GroupBox();
+            RadioButtonDecre = new RadioButton();
+            RadioButtonIncre = new RadioButton();
             LableDatePick = new Label();
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
             LabelFilter = new Label();
-            CheckBoxFilterTime = new CheckBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // ComboboxStatus
+            // comboBox1
             // 
-            ComboboxStatus.FormattingEnabled = true;
-            ComboboxStatus.Location = new Point(551, 16);
-            ComboboxStatus.Name = "ComboboxStatus";
-            ComboboxStatus.Size = new Size(141, 28);
-            ComboboxStatus.TabIndex = 16;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(734, 13);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(141, 28);
+            comboBox1.TabIndex = 16;
             // 
             // ButtonRefresh
             // 
             ButtonRefresh.IconChar = FontAwesome.Sharp.IconChar.None;
             ButtonRefresh.IconColor = Color.Black;
             ButtonRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ButtonRefresh.Location = new Point(1055, 16);
+            ButtonRefresh.Location = new Point(1052, 13);
             ButtonRefresh.Name = "ButtonRefresh";
             ButtonRefresh.Size = new Size(94, 29);
             ButtonRefresh.TabIndex = 15;
@@ -63,7 +66,7 @@
             ButtonFilter.IconChar = FontAwesome.Sharp.IconChar.None;
             ButtonFilter.IconColor = Color.Black;
             ButtonFilter.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ButtonFilter.Location = new Point(900, 16);
+            ButtonFilter.Location = new Point(896, 13);
             ButtonFilter.Name = "ButtonFilter";
             ButtonFilter.RightToLeft = RightToLeft.Yes;
             ButtonFilter.Size = new Size(138, 29);
@@ -71,10 +74,43 @@
             ButtonFilter.Text = "iconButton1";
             ButtonFilter.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(RadioButtonDecre);
+            groupBox1.Controls.Add(RadioButtonIncre);
+            groupBox1.Location = new Point(456, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(266, 48);
+            groupBox1.TabIndex = 13;
+            groupBox1.TabStop = false;
+            // 
+            // RadioButtonDecre
+            // 
+            RadioButtonDecre.AutoSize = true;
+            RadioButtonDecre.Location = new Point(129, 15);
+            RadioButtonDecre.Name = "RadioButtonDecre";
+            RadioButtonDecre.Size = new Size(117, 24);
+            RadioButtonDecre.TabIndex = 1;
+            RadioButtonDecre.TabStop = true;
+            RadioButtonDecre.Text = "radioButton2";
+            RadioButtonDecre.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonIncre
+            // 
+            RadioButtonIncre.AutoSize = true;
+            RadioButtonIncre.Location = new Point(0, 15);
+            RadioButtonIncre.Name = "RadioButtonIncre";
+            RadioButtonIncre.Size = new Size(117, 24);
+            RadioButtonIncre.TabIndex = 0;
+            RadioButtonIncre.TabStop = true;
+            RadioButtonIncre.Text = "radioButton1";
+            RadioButtonIncre.UseVisualStyleBackColor = true;
+            // 
             // LableDatePick
             // 
             LableDatePick.AutoSize = true;
-            LableDatePick.Location = new Point(315, 20);
+            LableDatePick.Location = new Point(251, 17);
             LableDatePick.Name = "LableDatePick";
             LableDatePick.Size = new Size(50, 20);
             LableDatePick.TabIndex = 12;
@@ -82,7 +118,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(367, 17);
+            dateTimePicker2.Location = new Point(304, 14);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(140, 27);
             dateTimePicker2.TabIndex = 11;
@@ -90,7 +126,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            dateTimePicker1.Location = new Point(174, 17);
+            dateTimePicker1.Location = new Point(111, 14);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(132, 27);
             dateTimePicker1.TabIndex = 10;
@@ -98,43 +134,36 @@
             // LabelFilter
             // 
             LabelFilter.AutoSize = true;
-            LabelFilter.Location = new Point(5, 20);
+            LabelFilter.Location = new Point(-1, 17);
             LabelFilter.Name = "LabelFilter";
             LabelFilter.Size = new Size(50, 20);
             LabelFilter.TabIndex = 9;
             LabelFilter.Text = "label1";
             // 
-            // CheckBoxFilterTime
-            // 
-            CheckBoxFilterTime.AutoSize = true;
-            CheckBoxFilterTime.Location = new Point(134, 22);
-            CheckBoxFilterTime.Name = "CheckBoxFilterTime";
-            CheckBoxFilterTime.Size = new Size(18, 17);
-            CheckBoxFilterTime.TabIndex = 17;
-            CheckBoxFilterTime.UseVisualStyleBackColor = true;
-            // 
-            // SupplierFilter
+            // PurchaseOrderFilter
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(CheckBoxFilterTime);
-            Controls.Add(ComboboxStatus);
+            Controls.Add(comboBox1);
             Controls.Add(ButtonRefresh);
             Controls.Add(ButtonFilter);
+            Controls.Add(groupBox1);
             Controls.Add(LableDatePick);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(LabelFilter);
-            Name = "SupplierFilter";
+            Name = "PurchaseOrderFilter";
             Size = new Size(1210, 60);
-            Load += SupplierFilter_Load;
+            Load += PurchaseOrderFilter_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ComboBox ComboboxStatus;
+        private ComboBox comboBox1;
         private FontAwesome.Sharp.IconButton ButtonRefresh;
         private FontAwesome.Sharp.IconButton ButtonFilter;
         private GroupBox groupBox1;
@@ -144,6 +173,5 @@
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
         private Label LabelFilter;
-        private CheckBox CheckBoxFilterTime;
     }
 }

@@ -10,7 +10,7 @@ namespace MiniStore.Commom.Config
     public class AppDbConnect
     {
         private static readonly string _connectionString =
-            "Server=localhost;Database=ministore;User Id=root;Password=;";
+            "Server=localhost;Database=mini_store;User Id=root;Password=;";
         public static MySqlConnection GetConnection()
         {
             try

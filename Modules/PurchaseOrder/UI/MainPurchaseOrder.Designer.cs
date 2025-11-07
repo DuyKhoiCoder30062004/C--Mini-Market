@@ -1,6 +1,6 @@
-﻿namespace MiniStore.Modules.SupplierManager.UI
+﻿namespace MiniStore.Modules.PurchaseOrder.UI
 {
-    partial class MainSupplierUI
+    partial class MainPurchaseOrder
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,24 +42,25 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.BackColor = Color.White;
             splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint_1;
+            splitContainer1.Panel2.BackColor = Color.White;
+            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(1210, 900);
-            splitContainer1.SplitterDistance = 402;
+            splitContainer1.SplitterDistance = 165;
             splitContainer1.TabIndex = 0;
             // 
-            // MainSupplierUI
+            // MainPurchaseOrder
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             Controls.Add(splitContainer1);
-            Name = "MainSupplierUI";
+            Name = "MainPurchaseOrder";
             Size = new Size(1210, 900);
-            Load += MainSupplierUI_Load;
+            Load += MainPurchaseOrder_Load;
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
