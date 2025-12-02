@@ -7,6 +7,8 @@ We use sqlite because it is lightweight and simple to deploy. small desktop soft
 ## SQL demo screenshot
 ![SQL](./SQL.png)
 
+(Thêm 1 cột : password vô table: Customers)
+
 I use docker to build everything. Because I don't want to break anything. So there is how I create this database:
 
 ```bash
