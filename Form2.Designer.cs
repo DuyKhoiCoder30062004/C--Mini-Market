@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp1_C__25_26
+//file này nữa - now Hiệp
+
+namespace WinFormsApp1_C__25_26
 {
     partial class Form2
     {
@@ -57,4 +59,5 @@
 
         private Label label1;
     }
+
 }
