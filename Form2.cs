@@ -1,6 +1,7 @@
 ﻿//using System;
 //using System.Drawing;
 //using System.Windows.Forms;
+//now - Hiệp
 
 //namespace WinFormsApp1_C__25_26
 //{
@@ -227,3 +228,4 @@ namespace WinFormsApp1_C__25_26
         }
     }
 }
+
