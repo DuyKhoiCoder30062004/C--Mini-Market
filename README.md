@@ -41,3 +41,17 @@ It implements a **Three-layer Architecture** and supports role-based access cont
 1. Clone the repository:
    ```bash
    git clone https://github.com/DuyKhoiCoder30062004/C--Mini-Market.git
+2. Open the project in Visual Studio.
+3. Configure the SQL Server connection string.
+4. Build and run the solution.
+
+## 📌 Screenshots
+<div align="center">
+<img src="./docs/mini-market.png" width="70%" />
+</div>
+
+## 📌 Contribution
+Developed by a team of 2 students as part of academic coursework.
+
+## 📌 License
+This project is for educational purposes only.
