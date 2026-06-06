@@ -46,9 +46,23 @@ It implements a **Three-layer Architecture** and supports role-based access cont
 4. Build and run the solution.
 
 ## 📌 Screenshots
+## Quyền Admin
 <div align="center">
-<img src="./docs/mini-market.png" width="70%" />
+<img src="./docs/admin_Dash.png" width="70%" />
+<img src="./docs/admin_nv.png" width="70%" />
+<img src="./docs/admin_Dashboard.png" width="70%" />  
+<img src="./docs/admin_setting.png" width="70%" />
+<img src="./docs/admin_setting_dark.png" width="70%" />   
+<img src="./docs/admin_sp.png" width="70%" />
 </div>
+
+## Quyền Nhân Viên
+<div align="center">
+<img src="./docs/nhanvien_Cus.png" width="70%" />
+<img src="./docs/nhanvien_Dash.png" width="70%" />
+<img src="./docs/nhanvien_sp.png" width="70%" />   
+</div>
+
 
 ## 📌 Contribution
 Developed by a team of 2 students as part of academic coursework.
